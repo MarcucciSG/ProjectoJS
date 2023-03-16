@@ -14,6 +14,7 @@ function mostrarHeroes(superHeroes){
     });
 }
 
+
 function filtrarEmpresa(heroe){
     if(datosBusqueda.empresa){
         return heroe.empresa === datosBusqueda.empresa
