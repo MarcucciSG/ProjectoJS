@@ -3,7 +3,7 @@
 
 const datosBusqueda = {
     empresa:'' /*+ prompt('ingresar empresa: marvel o dc comics')*/,
-    //año: + prompt('Elegir año entre 1930 a 1960'),
+    año:'',// + prompt('Elegir año entre 1930 a 1960'),
     residencia:'',
     poderOhabilidad:'',
 }
@@ -15,11 +15,8 @@ function mostrarHeroes(superHeroes){
 }
 
 
-function filtrarEmpresa(heroe){
-    if(datosBusqueda.empresa){
-        return heroe.empresa === datosBusqueda.empresa
-    }
-    return heroe
+function filtrarEmpresa(empresa){
+    return superHeroes.filter(superHeroes => superHeroes.empresa === empresa)
 }
 function filtrarAño(heroe){
     if(datosBusqueda.año){
@@ -43,13 +40,24 @@ function filtraHeroe(){
     }
 }
 
-filtraHeroe()
-
-const logo = document.querySelector('#marvel');
-logo.addEventListener('click', BuscarMarvel);
-function BuscarMarvel()
 
 
 
+const logoMarvel = document.querySelector('#marvel');
+const logoDC = document.getElementById("dc")
 
-console.log(logo)
+
+logoMarvel.addEventListener('click', () => {
+    const superHeroesFiltrados = filtrarEmpresa("marvel");
+    console.log(superHeroesFiltrados)
+}); 
+
+
+logoDC.addEventListener('click', () => {
+    const superHeroesFiltrados = filtrarEmpresa("dc comics");
+    console.log(superHeroesFiltrados)
+
+})
+
+
+
