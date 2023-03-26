@@ -1,4 +1,18 @@
-.img_logo{
+.img_logo{    
     width: 250px;
     height: 250px;
+}
+body{
+    transition: background-color 0.5s, color 0.5s;
+}
+
+body.dark_mode{
+    background-color: rgb(5, 5, 61);
+    color: white;
+}
+
+
+#btnDM{
+    background-color: rgb(11, 2, 92);
+    color: white;
 }

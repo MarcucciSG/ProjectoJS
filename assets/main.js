@@ -44,7 +44,7 @@ function filtraHeroe(){
 
 
 const logoMarvel = document.querySelector('#marvel');
-const logoDC = document.getElementById("dc")
+const logoDC = document.querySelector('#dc')
 
 
 logoMarvel.addEventListener('click', () => {
@@ -58,6 +58,48 @@ logoDC.addEventListener('click', () => {
     console.log(superHeroesFiltrados)
 
 })
+
+
+const colorModeButton = document.querySelector("#colorMode");
+const body = document.body;
+
+let darkMode = localStorage.getItem("dark_mode");
+
+
+function activateDarkMode(){
+    body.classList.add("dark_mode");
+    localStorage.setItem("dark_mode", "activado")
+    colorModeButton.innerText = "Cambiar a Light mode"
+    
+}
+
+function deactivateDarkMode(){
+    body.classList.remove("dark_mode");
+    localStorage.setItem("dark_mode", "desactivado");
+    colorModeButton.innerText = "Cambiar a Dark mode"
+    
+}
+
+if (darkMode === "desactivado"){
+    deactivateDarkMode();
+    
+}else{
+    activateDarkMode();
+    
+}
+
+colorModeButton.addEventListener("click", () => {
+    darkmode = localStorage.getItem("dark_mode");
+
+    if (darkmode === "activado") {
+        deactivateDarkMode()
+    }else{
+        activateDarkMode();
+    }
+})
+
+
+
 
 
 
