@@ -2,8 +2,8 @@
 
 
 const datosBusqueda = {
-    empresa:'' + prompt('ingresar empresa: marvel o dc comics'),
-    año: + prompt('Elegir año entre 1930 a 1960'),
+    empresa:'' /*+ prompt('ingresar empresa: marvel o dc comics')*/,
+    //año: + prompt('Elegir año entre 1930 a 1960'),
     residencia:'',
     poderOhabilidad:'',
 }
@@ -44,3 +44,12 @@ function filtraHeroe(){
 }
 
 filtraHeroe()
+
+const logo = document.querySelector('#marvel');
+logo.addEventListener('click', BuscarMarvel);
+function BuscarMarvel()
+
+
+
+
+console.log(logo)
