@@ -33,12 +33,9 @@ function noResultado(){
 
 function filtraHeroe(){
     let resultado = superHeroes.filter(filtrarEmpresa).filter(filtrarAño)
-        if(resultado.length){
-        mostrarHeroes(resultado)
-    }else{
-        noResultado()
+        resultado.length ? mostrarHeroes(resultado) : noResultado()
     }
-}
+
 
 
 
@@ -80,23 +77,16 @@ function deactivateDarkMode(){
     
 }
 
-if (darkMode === "desactivado"){
-    deactivateDarkMode();
+darkMode === "desactivado" ? deactivateDarkMode() : activateDarkMode();
     
-}else{
-    activateDarkMode();
-    
-}
+
 
 colorModeButton.addEventListener("click", () => {
     darkmode = localStorage.getItem("dark_mode");
-
-    if (darkmode === "activado") {
-        deactivateDarkMode()
-    }else{
-        activateDarkMode();
+    
+    darkmode === "activado" ? deactivateDarkMode() : activateDarkMode();
     }
-})
+)
 
 
 
